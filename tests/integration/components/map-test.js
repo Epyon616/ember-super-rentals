@@ -4,10 +4,10 @@ import { render, find } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import ENV from 'super-rentals/config/environment';
 
-module('Integration | Component | map', (hooks) => {
+module('Integration | Component | map', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders a map image for the specified params', async (assert) => {
+  test('it renders a map image for the specified params', async function (assert) {
     await render(hbs`<Map
       @lat="37.7797"
       @lng="-122.4184"
@@ -104,7 +104,7 @@ module('Integration | Component | map', (hooks) => {
     );
   });
 
-  test('the default alt attribute can be overridden', async (assert) => {
+  test('the default alt attribute can be overridden', async function (assert) {
     await render(hbs`<Map
       @lat="37.7797"
       @lng="-122.4184"
@@ -117,7 +117,7 @@ module('Integration | Component | map', (hooks) => {
     assert.dom('.map img').hasAttribute('alt', 'A map of San Francisco');
   });
 
-  test('the src, width and height attributes cannot be overridden', async (assert) => {
+  test('the src, width and height attributes cannot be overridden', async function (assert) {
     await render(hbs`<Map
       @lat="37.7797"
       @lng="-122.4184"

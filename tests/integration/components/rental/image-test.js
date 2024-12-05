@@ -3,10 +3,10 @@ import { setupRenderingTest } from 'super-rentals/tests/helpers';
 import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | rental/image', (hooks) => {
+module('Integration | Component | rental/image', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders the given image', async (assert) => {
+  test('it renders the given image', async function (assert) {
     await render(hbs`
       <Rental::Image
         src="/assets/images/teaching-tomster.png"
@@ -21,7 +21,7 @@ module('Integration | Component | rental/image', (hooks) => {
       .hasAttribute('alt', 'Teaching Tomster');
   });
 
-  test('clicking on the component toggles its size', async (assert) => {
+  test('clicking on the component toggles its size', async function (assert) {
     await render(hbs`
       <Rental::Image
         src="/assets/images/teaching-tomster.png"
