@@ -8,10 +8,11 @@ export default class IndexRoute extends Route {
     let { data } = await response.json();
 
     return data.map((model) => {
-      let { attributes } = model;
       let type;
+      let { attributes } = model;
+      const { category } = attributes;
 
-      if (COMMUNITY_CATEGORIES.includes(attributes.category)) {
+      if (COMMUNITY_CATEGORIES.includes(category)) {
         type = 'Community';
       } else {
         type = 'Standalone';
