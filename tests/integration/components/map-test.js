@@ -28,7 +28,7 @@ module('Integration | Component | map', function (hooks) {
     let token = encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN);
 
     assert.ok(
-      src.includes('-122.4184,37.7797,10'), 
+      src.includes('-122.4184,37.7797,10'),
       'the src should include the lng,lat,zoom parameter',
     );
 
